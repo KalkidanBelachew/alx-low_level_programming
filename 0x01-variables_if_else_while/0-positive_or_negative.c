@@ -1,6 +1,6 @@
+#include <stdlio.h>
 #include <stdlib.h>
 #include <time.h>
-#include <stdlio.h>
 /* more headers goes there */
 
 /* betty style doc for function main goes there */
@@ -21,6 +21,6 @@ int main(void)
 		printf("%d is zero\n", n);
 	}
 	else
-		printf("%d is negetive\n", n);
+		printf("%d is negative\n", n);
 	return (0);
 }
