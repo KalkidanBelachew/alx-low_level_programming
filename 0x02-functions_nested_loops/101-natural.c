@@ -9,7 +9,6 @@ int main(void)
 {
 	unsigned long int i, j, k, sum;
 	
-
 	for (i = 0; i < 1024; i++)
 
 	{
@@ -25,7 +24,6 @@ int main(void)
 			sum = sum + k;
 		}
 	}
-	
 	printf("%lu\n", sum);
 	return (0);
 }
