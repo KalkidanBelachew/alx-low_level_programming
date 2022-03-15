@@ -11,9 +11,12 @@ int main(void)
 	
 
 	for (i = 0; i < 1024; i++)
+
 	{
+
 		j = i / 3;
 		k = i / 5;
+
 		if ((i % 3) == 0)
 		{
 			sum = sum + j;
