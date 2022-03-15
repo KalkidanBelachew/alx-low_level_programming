@@ -1,4 +1,4 @@
-#include "holberton.h"
+#include "main.h"
 
 /**
  * main -  prints _putchar, followed by a new line
@@ -6,12 +6,12 @@
  */
 int main(void)
 {
-	char *holberton = "_putchar";
+	char *main = "_putchar";
 
-	while (*holerton)
+	while (*main)
 	{
-		_putchar(*holberton);
-		holberton++;
+		_putchar(*main);
+		main++;
 	}
 	_putchar('\n');
 	return (0);
