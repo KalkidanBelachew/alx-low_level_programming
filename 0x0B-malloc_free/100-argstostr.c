@@ -1,44 +1,58 @@
 #include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
-
 /**
- * argstostr - A function that concatenates all arguments of your program
+ * _strlen - returns the length of the string
+ * @s: input string to count
+ * Description: returns the length of a given string
+ * Return: length of string as int
+ **/
+int _strlen(char *s)
+{
+	int i;
+
+	for (i = 0; s[i] != '\0'; i++)
+		;
+	return (i + 1);
+}
+/**
+ * argstostr - concatenates all arguments of program
  * @ac: number of arguments
- * @av: array containing arguments
- * Return: A pointer to string that containing all arguments
- * or NULL if ac == 0, if av == NULL, or upon failure
- */
+ * @av: arguments, pointer to strings
+ * Description: concatenate all args to one string, separated by \n
+ * Return: pointer to string, NULL if fails
+ **/
 char *argstostr(int ac, char **av)
 {
-	char *new_str;
-	int len = 0, i = 0, j, k = 0;
+	char *dest;
+	unsigned int size, i, j, k;
+
+	size = 0;
+	k = 0;
 
 	if (ac <= 0 || av == NULL)
 		return (NULL);
 
-	for (; i < ac; i++)
+	for (i = 0; i < (unsigned int)ac; i++)
 	{
-		for (j = 0; av[i][j]; j++)
-			len++;
-		len++;
+		size += _strlen(av[i]);
 	}
 
-	len++;
-	new_str = malloc(len * sizeof(char));
-	if (new_str == NULL)
+	dest = (char *)malloc((size + 1) * sizeof(char));
+
+	if (dest == NULL)
 		return (NULL);
 
-	for (i = 0; i < ac; i++)
+	for (i = 0; i < (unsigned int)ac; i++)
 	{
-		for (j = 0; av[i][j]; j++)
+		for (j = 0; av[i][j] != '\0'; j++)
 		{
-			new_str[k] = av[i][j];
+			dest[k] = av[i][j];
 			k++;
 		}
-		new_str[k] = '\n';
+		dest[k] = '\n';
 		k++;
 	}
-
-	new_str[k] = '\0';
-	return (new_str);
-
+	dest[k] = '\0';
+	return (dest);
+}
