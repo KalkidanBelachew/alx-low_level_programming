@@ -1,27 +1,16 @@
+#include "main.h"
 #include <stdio.h>
 #include <stdlib.h>
-
 /**
- * main - Check the code
- * @argc: number of arguments
- * @argv: arguments
- * Return: Nothing
- */
-int main(int argc, char **argv)
+ * create_array -
+ * @size: size of array
+ * @c: char to assign
+ * Description:
+ * Return:
+ **/
+char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	int num1, num2, result;
 
-	if (argc != 3)
-	{
-		printf("Error\n");
-		exit(98);
-	}
-	else
-	{
-		num1 = atoi(argv[1]);
-		num2 = atoi(argv[2]);
-		result = num1 * num2;
-		printf("%d\n", result);
-		return (0);
-	}
+
+	return (0);
 }
